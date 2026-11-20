@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ReviveGo - Payment</title>
+</head>
+<body>
+<h1>ReviveGo</h1>
+<p><a href="home.html">Home</a> | <a href="account.html">Account</a></p>
+<hr>
+
+<h2>Payment</h2>
+
+<form action="tracking.html" method="get">
+  <p>Card number: <input type="text"></p>
+  <p>MM/YY: <input type="text" size="5"> CVV: <input type="text" size="4"></p>
+
+  <p>Or pay with:</p>
+  <p><input type="radio" name="method"> Apple Pay</p>
+  <p><input type="radio" name="method"> Venmo</p>
+  <p><input type="radio" name="method"> Cash</p>
+
+  <p>Student Discount: <input type="text" id="discount"> <button type="button" onclick="applyDiscount()">Apply</button></p>
+
+  <p>Total: <span id="total">$5.00</span></p>
+  <script>
+    function applyDiscount() {
+      if (document.getElementById('discount').value.trim() !== '') {
+        document.getElementById('total').textContent = '$4.00';
+      }
+    }
+  </script>
+  <p><button type="submit">Pay</button></p>
+</form>
+
+<p><a href="home.html">Cancel</a></p>
+</body>
+</html>
